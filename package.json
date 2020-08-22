@@ -1,0 +1,23 @@
+{
+  "name": "github-homepage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "serve -s ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mango3403/mango3403.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mango3403/mango3403.github.io/issues"
+  },
+  "homepage": "https://github.com/Mango3403/mango3403.github.io",
+  "devDependencies": {
+    "serve": "^11.3.2"
+  }
+}

@@ -1,0 +1,12 @@
+@import "palette.css";
+
+/* Global Styling */
+
+* {
+  background-color: var(--gray-800);
+  color: var(--gray-50);
+}
+
+.nav-links a::after {
+  border-bottom: 2px solid var(--gray-50);
+}
