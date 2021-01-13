@@ -1,27 +1,35 @@
+// data
+const themeState = [
+  {
+    text: '亮',
+    file: '/styles/theme/light.css',
+  },
+  {
+    text: '暗',
+    file: '/styles/theme/dark.css',
+  },
+];
+
+// handler
 const themeBtn = document.getElementById('theme-btn');
+
+function setTheme(theme) {
+  themeBtn.textContent = theme.text;
+  var link = document.querySelector('link#theme-elem');
+  link.setAttribute('href', theme.file);
+}
 
 themeBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  const themeState = [
-    {
-      text: '亮',
-      file: '/styles/theme/light.css',
-    },
-    {
-      text: '暗',
-      file: '/styles/theme/dark.css',
-    },
-  ];
   if (themeBtn.textContent === themeState[0].text) {
-    themeBtn.textContent = themeState[1].text;
-    changeCSS(themeState[1].file);
+    setTheme(themeState[1]);
   } else {
-    themeBtn.textContent = themeState[0].text;
-    changeCSS(themeState[0].file);
+    setTheme(themeState[0]);
   }
 });
 
-function changeCSS(cssFile) {
-  var link = document.querySelector('link#theme-elem');
-  link.setAttribute('href', cssFile);
-}
+window.addEventListener('DOMContentLoaded', evt => {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    setTheme(themeState[1]);
+  }
+});
